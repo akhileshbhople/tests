@@ -26,6 +26,7 @@ env:
   - target_branch=$TRAVIS_BRANCH
 
 before_install:
+  - echo $TRAVIS_OS_NAME
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then .ci/setup.sh; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then travis_retry brew install bash yamllint gnu-getopt; fi
   - bash .ci/install_go.sh -p -f
