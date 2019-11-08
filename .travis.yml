@@ -8,12 +8,13 @@ dist: xenial
 
 os:
   - linux
-  - osx
-  - linux-ppc64le
+  #- osx
+  #- linux-ppc64le
 
 matrix:
   include:
     - os: linux
+      arch: ppc64le
       sudo: required
   allow_failures:
     - os: osx
